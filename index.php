@@ -29,7 +29,7 @@
     if (empty($_POST['brukernavn'])){
       $_POST['brukernavn'] = '';
       } else {
-        echo htmlentities($_POST['brukernavn'])
+        echo htmlentities($_POST['brukernavn']);
         };
         ?>"
         /><br />
