@@ -82,7 +82,7 @@ function handleChoice(choiceText, thoughtText, questionText, choicesHTML) {
         // Reset the typing flag after the animation finishes
         setTimeout(() => {
             isTyping = false;
-        }, 2000); // Adjust the duration as needed
+        }, 2000); // 2 sek
     }
 }
 
@@ -101,13 +101,13 @@ function startCountdown() {
         confirmationMessage.textContent = `Are you sure you want to start over?`;
     };
 
-    updateMessage(); // Initialize the message with the countdown
+    updateMessage(); // melding blir kalt
 
-    countdownTimer.textContent = `Countdown: ${countdown} seconds`;
+    countdownTimer.textContent = `Countdown: ${countdown} seconds`; 
 
     resetTimer = setInterval(() => {
         if (countdown > 0) {
-            countdown--;
+            countdown--; // minus, går fra 1-0(2 sekunder)
             updateMessage();
             countdownTimer.textContent = `Countdown: ${countdown} seconds`;
         } else {
@@ -120,7 +120,7 @@ function startCountdown() {
             yesButton.classList.add('blueButton'); // Add the blueButton class
             resetConfirmed = true; // Set resetConfirmed to true after the countdown
         }
-    }, 1000); // 1-second interval
+    }, 1000); // 1-second interval fordi den slutter på 0 som også er et sekund
 }
 
 function cancelResetTimer() {
@@ -158,27 +158,27 @@ function resetGame() {
     }
 }
 
-// Get the modal and buttons
+// Henter knappene
 const modal = document.getElementById('confirmationModal');
 const cancelButton = document.getElementById('cancelButton');
 const yesButton = document.getElementById('yesButton');
 
-// Add event listeners to show the modal
+// Legger til knapp interaktivitet
 document.querySelector('.reset').addEventListener('click', () => {
     modal.style.display = 'block';
     startCountdown();
 });
 
-// Add event listener to cancel button
+// samme 
 cancelButton.addEventListener('click', () => {
     modal.style.display = 'none';
-    cancelResetTimer(); // Cancel the reset timer
+    cancelResetTimer(); // ingen countdown
 });
 
-// Add event listener to yes button
+// samme
 yesButton.addEventListener('click', () => {
     if (yesButton.disabled || !resetConfirmed) {
-        return; // Prevent clicking while disabled or not confirmed
+        return; // hvis knappen ikke kan bli klikket, kan ikke resette
     }
     modal.style.display = 'none';
     resetGame();
@@ -356,12 +356,7 @@ function backToSleep() {
 
 
 
-// <-------------------------------------->
-// CHAPTER 2
-// <-------------------------------------->
-
-
-// typeing animasjon, sammen med css
+// typeing animasjon, sammen med css, ikke en kode jeg lagde selv.
 // dette er grunnen til hvorfor jeg har nedtelling, som at den ikke overlapper.
 function typeText(element, text, delay) {
     element.textContent = ''; // textContent, hvor jeg har all text blir til ingenting først.
