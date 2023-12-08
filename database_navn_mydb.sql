@@ -22,20 +22,6 @@ AUTO_INCREMENT = 21
 DEFAULT CHARACTER SET = latin1;
 
 
--- -----------------------------------------------------
--- Table `mydb`.`users_checkpoint`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`users_checkpoint` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `checkpoints` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`, `checkpoints`),
-  INDEX `fk_users_checkpoint_user_progress1_idx` (`checkpoints` ASC),
-  INDEX `idx_users_checkpoint` (`id` ASC))
-ENGINE = InnoDB
-AUTO_INCREMENT = 7
-DEFAULT CHARACTER SET = latin1;
-
-
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
