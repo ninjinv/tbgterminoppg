@@ -24,25 +24,21 @@
 <p>Vennligst logg inn:</p>
 <form id="formL" method="post" action="login.php">
     <label class="inputL" for="brukernavn">Brukernavn:</label>
-    <input type="text" name="brukernavn" placeholder="brukernavn" value="
-    <?php
+    <input type="text" name="brukernavn" placeholder="brukernavn" value="<?php
     if (empty($_POST['brukernavn'])){
       $_POST['brukernavn'] = '';
       } else {
         echo htmlentities($_POST['brukernavn']);
         };
-        ?>"
-        /><br />
+        ?>" required /><br />
     <label class="inputL" for="passord">Passord:</label>
-    <input type="password" name="passord" placeholder="passord" value="
-    <?php
+    <input type="password" name="passord" placeholder="passord" value="<?php
     if (empty($_POST['passord'])){
       $_POST['passord'] = '';
       } else {
         echo htmlentities($_POST['passord']);
         };
-        ?>"
-        /><br />
+        ?>" required /><br />
     <input type="submit" value="Logg inn" name="submit" />
 </form>
 <p>Eller klikk <a href="registration.php">her</a> for å registrere ny bruker</p>
