@@ -48,7 +48,7 @@ function handleChoice(choiceText, thoughtText, questionText, choicesHTML) {
     playerProgress = 0;
 
     // document.querySelector('img').src = imageSource;
-    const scene = document.querySelector('img').src = imageSource;
+    // const scene = document.querySelector('img').src = imageSource;
     const storyText = document.querySelector('.story-text.text1');
     const storyThoughts = document.querySelector('.story-thoughts.text1');
     const storyQuestion = document.querySelector('.story-question.text1');
