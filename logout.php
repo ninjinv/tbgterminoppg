@@ -2,12 +2,11 @@
 
 include 'db.con.php';
 
+// resumer session
 session_start();
 
-$_SESSION = array();
+session_unset(); // fjerner variabler
+session_destroy(); // avslutter
 
-session_destroy();
-
-header("Location: index.php");
+header("Location: index.php"); // sender deg til logg inn
 exit;
-?>
